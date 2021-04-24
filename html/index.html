@@ -23,7 +23,7 @@
          {
             $('div#loading').removeClass('inactive');
             
-            $.get('http://homeassistant.local:81', function (data) {
+            $.get('http://homeassistant.local:8123/api/webhook/restart', function (data) {
                $('div#container').html(data);
             })
             .always(function() {
@@ -38,7 +38,7 @@
          {
             $('div#loading').removeClass('inactive');
             
-            $.get('http://homeassistant.local:82', function (data) {
+            $.get('http://homeassistant.local:8123/api/webhook/shutdown', function (data) {
                $('div#container').html(data);
             })
             .always(function() {
