@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+
+      <script src="jquery-3.6.0.min.js"></script>
+      <script type="text/javascript">
+         $(function(){
+            // Set iframe size dynamically
+            $('iframe').css('height', window.innerHeight-$('div#toolbar')[0].clientHeight-30);
+         
+            // Set loading icon
+            var dstFrame = $('iframe')[0];
+            var dstDoc = dstFrame.contentDocument || dstFrame.contentWindow.document;
+            dstDoc.write('<div style="width: 100%; text-align: center;"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTgwLDUyLjVoLTMuMzM3bDAuNTI1LTIuOTM5YzAuMjEtMS4xNzQsMC4zMTItMi4yNTgsMC4zMTItMy4zMTFjMC0xMC4zNC04LjQxMS0xOC43NS0xOC43NS0xOC43NSAgYy04LjcyNCwwLTE2LjQxOSw2LjE4LTE4LjI5NywxNC42OTVsLTAuODcsMy45NDNsLTMuMTQyLTIuNTM1QzMzLjUyLDQxLjI0NiwyOS45OTYsNDAsMjYuMjUsNDBDMTcuMjksNDAsMTAsNDcuMjg5LDEwLDU2LjI1ICBjMCw4Ljk1OSw3LjI5LDE2LjI1LDE2LjI1LDE2LjI1SDgwYzUuNTE0LDAsMTAtNC40ODYsMTAtMTBTODUuNTE0LDUyLjUsODAsNTIuNXogTTU1LjE5NywzOS44MTMgIGMtMi45OTgsMS42NTQtNC4zNzgsNS4xMDYtMy41NTgsOC4yNzhsMy4wNi0xLjY4OGwtMC4yNDIsMTIuNDYxbC0xMC42NzItNi40MzhsMy40LTEuODc2Yy0yLjA5OC01LjYzNiwwLjE3Ny0xMi4xMjQsNS41OTYtMTUuMTE0ICBjMS4yMDgtMC42NjQsMi43My0wLjIyOCwzLjM5NiwwLjk4MUM1Ni44NDUsMzcuNjI1LDU2LjQwNiwzOS4xNDYsNTUuMTk3LDM5LjgxM3ogTTY0LjcxOCw1Ny4wNjQgIGMtMC4zODMsMC4yMTEtMC43OTgsMC4zMTEtMS4yMDYsMC4zMTFjLTAuODgxLDAtMS43MzUtMC40NjYtMi4xOTEtMS4yOTJjLTAuNjY2LTEuMjA5LTAuMjI4LTIuNzMsMC45ODEtMy4zOTcgIGMyLjk5Ny0xLjY1Myw0LjM3Ny01LjEwNCwzLjU1OC04LjI3NmwtMy4wNiwxLjY4OGwwLjI0NC0xMi40NjFsMTAuNjcxLDYuNDRsLTMuNCwxLjg3NUM3Mi40MTEsNDcuNTg3LDcwLjEzNiw1NC4wNzQsNjQuNzE4LDU3LjA2NHogICI+PC9wYXRoPjxwYXRoIGQ9Ik04Mi40NTEsNDcuNjk5YzAuMDMzLTAuNDg4LDAuMDQ5LTAuOTY5LDAuMDQ5LTEuNDQ5YzAtMTMuMDk2LTEwLjY1NC0yMy43NS0yMy43NS0yMy43NSAgYy05Ljg0NywwLTE4LjY1OSw2LjIxNS0yMi4xNDYsMTUuMjAxQzMzLjQ1MywzNS45NDMsMjkuODc5LDM1LDI2LjI1LDM1QzE0LjUzMywzNSw1LDQ0LjUzMyw1LDU2LjI1UzE0LjUzMyw3Ny41LDI2LjI1LDc3LjVIODAgIGM4LjI3MSwwLDE1LTYuNzI5LDE1LTE1Qzk1LDU1LjA2Myw4OS41NjEsNDguODczLDgyLjQ1MSw0Ny42OTl6IE04MCw3Mi41SDI2LjI1QzE3LjI5LDcyLjUsMTAsNjUuMjA5LDEwLDU2LjI1ICBDMTAsNDcuMjg5LDE3LjI5LDQwLDI2LjI1LDQwYzMuNzQ2LDAsNy4yNywxLjI0NiwxMC4xOTEsMy42MDRsMy4xNDIsMi41MzVsMC44Ny0zLjk0M0M0Mi4zMzEsMzMuNjgsNTAuMDI2LDI3LjUsNTguNzUsMjcuNSAgYzEwLjMzOSwwLDE4Ljc1LDguNDEsMTguNzUsMTguNzVjMCwxLjA1My0wLjEwMiwyLjEzNy0wLjMxMiwzLjMxMUw3Ni42NjMsNTIuNUg4MGM1LjUxNCwwLDEwLDQuNDg2LDEwLDEwUzg1LjUxNCw3Mi41LDgwLDcyLjV6Ij48L3BhdGg+PHBhdGggZD0iTTUyLjc4MSwzNS40MzVjLTUuNDE5LDIuOTktNy42OTQsOS40NzktNS41OTYsMTUuMTE0bC0zLjQsMS44NzZsMTAuNjcyLDYuNDM4bDAuMjQyLTEyLjQ2MWwtMy4wNiwxLjY4OCAgYy0wLjgyLTMuMTcyLDAuNTYtNi42MjQsMy41NTgtOC4yNzhjMS4yMDktMC42NjcsMS42NDctMi4xODgsMC45OC0zLjM5N0M1NS41MTIsMzUuMjA3LDUzLjk4OSwzNC43NzEsNTIuNzgxLDM1LjQzNXoiPjwvcGF0aD48cGF0aCBkPSJNNjMuMDQ0LDMzLjYzNkw2Mi44LDQ2LjA5N2wzLjA2LTEuNjg4YzAuODE5LDMuMTcyLTAuNTYxLDYuNjIzLTMuNTU4LDguMjc2Yy0xLjIwOSwwLjY2Ny0xLjY0NywyLjE4OC0wLjk4MSwzLjM5NyAgYzAuNDU2LDAuODI2LDEuMzExLDEuMjkyLDIuMTkxLDEuMjkyYzAuNDA4LDAsMC44MjMtMC4xLDEuMjA2LTAuMzExYzUuNDE4LTIuOTksNy42OTMtOS40NzgsNS41OTctMTUuMTEzbDMuNC0xLjg3NUw2My4wNDQsMzMuNjM2eiAgIj48L3BhdGg+PC9zdmc+" /></div>');        
+            dstDoc.close();
+            
+            // Start loading iframe
+            $('iframe').attr('src', 'http://homeassistant.local:8123');
+         });
+         
+         function shutdown()
+         {
+            $('div#loading').removeClass('inactive');
+            
+            $.get('http://homeassistant.local/shutdown', function (data) {
+               $('div#container').html(data);
+            })
+            .always(function() {
+               $('div#loading').addClass('inactive');
+            })
+            .fail(function() {
+               alert('Kommandot misslyckades');
+            });
+         }
+         
+         function reload()
+         {
+            location.reload();
+         }
+         
+      </script>
+      <style type="text/css">
+         body,html {
+            margin: 0;
+            font-family: verdana;
+            font-size: 10pt;
+            background-color: #b9ceac;
+         }
+         
+         div#toolbar {
+            min-height: 20px;
+            padding: 2px;
+            background: #DDDDDD;
+            border-bottom: 1px solid #aaaaaa;
+         }
+         
+         button { 
+            border-radius: 5px;
+            background-color: #4CAF50;
+            display: inline-block;
+            padding: 5px 7px 5px 7px;
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+         }
+         
+         button#shutdown {
+            background-color: #EE5050;
+            margin-left: 20px;
+         }
+         
+         div#container { padding: 0.5em; }
+         
+         div#loading {
+            position: absolute;
+            display: inline-block;
+            font-size: 20pt;
+            width: 90%;
+            height: 8em;
+            top: 5%;
+            left: 5%;
+            z-index: 9999;
+            border: 2px solid #aaaaaa;
+            background-color: #eeeeeeee;
+            color: #202020;
+            text-align: center;
+            vertical-align: center;
+         }
+         
+         div#loading span {
+            display:inline-block;
+            font-size: 20pt;
+            font-weight: bold;
+            margin-top: 3em;
+         }
+         
+         div#loading.inactive {
+            display: none;
+         }
+         
+         iframe {
+            border: none; width: 100%;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="toolbar">
+         <button id="reload" onClick="reload();">Ladda om sida</button>
+         <button id="shutdown" onClick="shutdown();">Stäng av systemet</button>
+      </div>
+      <div id="container">
+         <iframe>
+
+         </iframe>
+      </div>
+      <div id="loading" class="inactive">
+            <span>Kontaktar server...</span>
+      </div>
+   </body>
+</html>
