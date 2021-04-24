@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hej"
+echo "Hej du"
