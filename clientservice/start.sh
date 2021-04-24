@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hej du"
+echo "Hej" > testfil
