@@ -7,4 +7,4 @@ while [[ $(nc -zv homassistant.local 8123 2>&1) != *"succeeded"* ]]; do
    sleep 10;
 done
 
-chromium-browser -kiosk file:///home/pi/RV/html/index.html
+chromium-browser --kiosk file:///home/pi/RV/html/index.html
